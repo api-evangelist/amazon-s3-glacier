@@ -1,0 +1,87 @@
+{
+  "$id": "https://schema.api.io/amazon-s3-glacier/amazon-s3-glacier-vault-schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Amazon S3 Glacier Vault",
+  "description": "Schema representing an Amazon S3 Glacier vault resource. A vault is a container for storing archives in Amazon S3 Glacier, providing durable and low-cost storage for data archiving and long-term backup.",
+  "type": "object",
+  "required": [
+    "VaultName"
+  ],
+  "properties": {
+    "VaultARN": {
+      "type": "string",
+      "description": "The Amazon Resource Name (ARN) of the vault.",
+      "pattern": "^arn:aws:glacier:[a-z0-9-]+:[0-9]{12}:vaults/.+$"
+    },
+    "VaultName": {
+      "type": "string",
+      "description": "The name of the vault.",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The Universal Coordinated Time (UTC) date when the vault was created."
+    },
+    "LastInventoryDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory."
+    },
+    "NumberOfArchives": {
+      "type": "integer",
+      "description": "The number of archives in the vault as of the last inventory date.",
+      "minimum": 0
+    },
+    "SizeInBytes": {
+      "type": "integer",
+      "description": "Total size, in bytes, of the archives in the vault as of the last inventory date.",
+      "minimum": 0
+    },
+    "VaultAccessPolicy": {
+      "$ref": "#/$defs/VaultAccessPolicy"
+    },
+    "VaultNotificationConfig": {
+      "$ref": "#/$defs/VaultNotificationConfig"
+    },
+    "Tags": {
+      "type": "object",
+      "description": "The tags that are assigned to the vault.",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "VaultAccessPolicy": {
+      "type": "object",
+      "properties": {
+        "Policy": {
+          "type": "string",
+          "description": "The vault access policy document in JSON format."
+        }
+      }
+    },
+    "VaultNotificationConfig": {
+      "type": "object",
+      "properties": {
+        "SNSTopic": {
+          "type": "string",
+          "description": "The Amazon Simple Notification Service (Amazon SNS) topic ARN."
+        },
+        "Events": {
+          "type": "array",
+          "description": "A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS topic.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "ArchiveRetrievalCompleted",
+              "InventoryRetrievalCompleted"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

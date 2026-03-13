@@ -1,0 +1,98 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "https://schema.org/",
+    "glacier": "https://docs.aws.amazon.com/amazonglacier/latest/dev/",
+    "aws": "https://aws.amazon.com/",
+    "iam": "https://docs.aws.amazon.com/IAM/latest/UserGuide/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "schema": "https://schema.org/",
+
+    "Vault": {
+      "@id": "glacier:api-vault-get.html",
+      "@context": {
+        "VaultARN": {
+          "@id": "aws:arn",
+          "@type": "@id"
+        },
+        "VaultName": {
+          "@id": "schema:name",
+          "@type": "xsd:string"
+        },
+        "CreationDate": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "LastInventoryDate": {
+          "@id": "dcterms:modified",
+          "@type": "xsd:dateTime"
+        },
+        "NumberOfArchives": {
+          "@id": "glacier:NumberOfArchives",
+          "@type": "xsd:integer"
+        },
+        "SizeInBytes": {
+          "@id": "schema:contentSize",
+          "@type": "xsd:long"
+        }
+      }
+    },
+
+    "Archive": {
+      "@id": "glacier:api-archive-post.html",
+      "@context": {
+        "ArchiveId": {
+          "@id": "schema:identifier",
+          "@type": "xsd:string"
+        },
+        "ArchiveDescription": {
+          "@id": "schema:description",
+          "@type": "xsd:string"
+        },
+        "CreationDate": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "Size": {
+          "@id": "schema:contentSize",
+          "@type": "xsd:long"
+        },
+        "SHA256TreeHash": {
+          "@id": "glacier:SHA256TreeHash",
+          "@type": "xsd:string"
+        }
+      }
+    },
+
+    "Job": {
+      "@id": "glacier:api-initiate-job-post.html",
+      "@context": {
+        "JobId": {
+          "@id": "schema:identifier",
+          "@type": "xsd:string"
+        },
+        "JobDescription": {
+          "@id": "schema:description",
+          "@type": "xsd:string"
+        },
+        "Action": {
+          "@id": "glacier:JobAction",
+          "@type": "xsd:string"
+        },
+        "StatusCode": {
+          "@id": "glacier:JobStatus",
+          "@type": "xsd:string"
+        },
+        "CreationDate": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "CompletionDate": {
+          "@id": "glacier:CompletionDate",
+          "@type": "xsd:dateTime"
+        }
+      }
+    }
+  }
+}

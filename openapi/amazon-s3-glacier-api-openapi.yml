@@ -1,0 +1,268 @@
+openapi: 3.1.0
+info:
+  title: Amazon S3 Glacier REST API
+  description: >-
+    Amazon S3 Glacier is a secure, durable, and extremely low-cost storage
+    service for data archiving and online backup. This API enables management
+    of vaults, archives, retrieval jobs, vault access policies, and data
+    retrieval configurations.
+  version: '2012-06-01'
+  contact:
+    name: AWS Support
+    url: https://aws.amazon.com/premiumsupport/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://aws.amazon.com/service-terms/
+  x-logo:
+    url: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
+externalDocs:
+  description: Amazon S3 Glacier API Reference
+  url: https://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-api.html
+servers:
+  - url: https://glacier.{region}.amazonaws.com
+    description: Amazon S3 Glacier regional endpoint
+    variables:
+      region:
+        default: us-east-1
+        description: AWS region
+        enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - eu-west-1
+          - eu-west-2
+          - eu-central-1
+          - ap-northeast-1
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-south-1
+          - sa-east-1
+security:
+  - sigv4: []
+paths:
+  /{accountId}/vaults:
+    get:
+      summary: List Vaults
+      description: Returns a list of vaults owned by the calling user's account.
+      operationId: listVaults
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+            default: "-"
+        - name: marker
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListVaultsOutput'
+  /{accountId}/vaults/{vaultName}:
+    put:
+      summary: Create Vault
+      description: Creates a vault for storing archives.
+      operationId: createVault
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+            default: "-"
+        - name: vaultName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Vault created successfully
+          headers:
+            Location:
+              schema:
+                type: string
+    get:
+      summary: Describe Vault
+      description: Returns information about a vault including creation date, number of archives, and total size.
+      operationId: describeVault
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+            default: "-"
+        - name: vaultName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeVaultOutput'
+    delete:
+      summary: Delete Vault
+      description: Deletes an empty vault. The vault must contain no archives.
+      operationId: deleteVault
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+            default: "-"
+        - name: vaultName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Vault deleted successfully
+  /{accountId}/vaults/{vaultName}/archives:
+    post:
+      summary: Upload Archive
+      description: Adds an archive to a vault.
+      operationId: uploadArchive
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+            default: "-"
+        - name: vaultName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: x-amz-archive-description
+          in: header
+          schema:
+            type: string
+        - name: x-amz-sha256-tree-hash
+          in: header
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+      responses:
+        '201':
+          description: Archive uploaded successfully
+  /{accountId}/vaults/{vaultName}/jobs:
+    post:
+      summary: Initiate Job
+      description: Initiates a job of the specified type, such as archive retrieval or vault inventory retrieval.
+      operationId: initiateJob
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+            default: "-"
+        - name: vaultName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobParameters'
+      responses:
+        '202':
+          description: Job initiated successfully
+    get:
+      summary: List Jobs
+      description: Lists jobs for a vault that are in progress or have recently finished.
+      operationId: listJobs
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+            default: "-"
+        - name: vaultName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+components:
+  securitySchemes:
+    sigv4:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: AWS Signature Version 4
+  schemas:
+    DescribeVaultOutput:
+      type: object
+      properties:
+        VaultARN:
+          type: string
+        VaultName:
+          type: string
+        CreationDate:
+          type: string
+          format: date-time
+        LastInventoryDate:
+          type: string
+          format: date-time
+        NumberOfArchives:
+          type: integer
+        SizeInBytes:
+          type: integer
+    ListVaultsOutput:
+      type: object
+      properties:
+        VaultList:
+          type: array
+          items:
+            $ref: '#/components/schemas/DescribeVaultOutput'
+        Marker:
+          type: string
+    JobParameters:
+      type: object
+      properties:
+        Type:
+          type: string
+          enum: [archive-retrieval, inventory-retrieval, select]
+        ArchiveId:
+          type: string
+        Description:
+          type: string
+        SNSTopic:
+          type: string
+        RetrievalByteRange:
+          type: string
+        Tier:
+          type: string
+          enum: [Expedited, Standard, Bulk]
