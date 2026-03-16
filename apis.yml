@@ -3,7 +3,7 @@ description: Amazon S3 Glacier is a secure, durable, and extremely low-cost Amaz
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://aws.amazon.com/s3/storage-classes/glacier/
 created: '2024-01-15'
-modified: '2026-03-13'
+modified: '2026-03-16'
 apis:
 - name: Amazon S3 Glacier API
   description: >-
