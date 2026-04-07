@@ -44,7 +44,7 @@ security:
 paths:
   /{accountId}/vaults:
     get:
-      summary: List Vaults
+      summary: Amazon S3 Glacier List Vaults
       description: Returns a list of vaults owned by the calling user's account.
       operationId: listVaults
       parameters:
@@ -71,7 +71,7 @@ paths:
                 $ref: '#/components/schemas/ListVaultsOutput'
   /{accountId}/vaults/{vaultName}:
     put:
-      summary: Create Vault
+      summary: Amazon S3 Glacier Create Vault
       description: Creates a vault for storing archives.
       operationId: createVault
       parameters:
@@ -94,7 +94,7 @@ paths:
               schema:
                 type: string
     get:
-      summary: Describe Vault
+      summary: Amazon S3 Glacier Describe Vault
       description: Returns information about a vault including creation date, number of archives, and total size.
       operationId: describeVault
       parameters:
@@ -117,7 +117,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/DescribeVaultOutput'
     delete:
-      summary: Delete Vault
+      summary: Amazon S3 Glacier Delete Vault
       description: Deletes an empty vault. The vault must contain no archives.
       operationId: deleteVault
       parameters:
@@ -137,7 +137,7 @@ paths:
           description: Vault deleted successfully
   /{accountId}/vaults/{vaultName}/archives:
     post:
-      summary: Upload Archive
+      summary: Amazon S3 Glacier Upload Archive
       description: Adds an archive to a vault.
       operationId: uploadArchive
       parameters:
@@ -172,7 +172,7 @@ paths:
           description: Archive uploaded successfully
   /{accountId}/vaults/{vaultName}/jobs:
     post:
-      summary: Initiate Job
+      summary: Amazon S3 Glacier Initiate Job
       description: Initiates a job of the specified type, such as archive retrieval or vault inventory retrieval.
       operationId: initiateJob
       parameters:
@@ -197,7 +197,7 @@ paths:
         '202':
           description: Job initiated successfully
     get:
-      summary: List Jobs
+      summary: Amazon S3 Glacier List Jobs
       description: Lists jobs for a vault that are in progress or have recently finished.
       operationId: listJobs
       parameters:
