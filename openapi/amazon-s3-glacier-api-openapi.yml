@@ -69,6 +69,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListVaultsOutput'
+      tags:
+        - Vaults
   /{accountId}/vaults/{vaultName}:
     put:
       summary: Amazon S3 Glacier Create Vault
@@ -93,6 +95,8 @@ paths:
             Location:
               schema:
                 type: string
+      tags:
+        - Vaults
     get:
       summary: Amazon S3 Glacier Describe Vault
       description: Returns information about a vault including creation date, number of archives, and total size.
@@ -116,6 +120,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DescribeVaultOutput'
+      tags:
+        - Vaults
     delete:
       summary: Amazon S3 Glacier Delete Vault
       description: Deletes an empty vault. The vault must contain no archives.
@@ -135,6 +141,8 @@ paths:
       responses:
         '204':
           description: Vault deleted successfully
+      tags:
+        - Vaults
   /{accountId}/vaults/{vaultName}/archives:
     post:
       summary: Amazon S3 Glacier Upload Archive
@@ -170,6 +178,8 @@ paths:
       responses:
         '201':
           description: Archive uploaded successfully
+      tags:
+        - Vaults
   /{accountId}/vaults/{vaultName}/jobs:
     post:
       summary: Amazon S3 Glacier Initiate Job
@@ -196,6 +206,8 @@ paths:
       responses:
         '202':
           description: Job initiated successfully
+      tags:
+        - Vaults
     get:
       summary: Amazon S3 Glacier List Jobs
       description: Lists jobs for a vault that are in progress or have recently finished.
@@ -215,6 +227,8 @@ paths:
       responses:
         '200':
           description: Successful response
+      tags:
+        - Vaults
 components:
   securitySchemes:
     sigv4:
@@ -266,3 +280,5 @@ components:
         Tier:
           type: string
           enum: [Expedited, Standard, Bulk]
+tags:
+  - name: Vaults
