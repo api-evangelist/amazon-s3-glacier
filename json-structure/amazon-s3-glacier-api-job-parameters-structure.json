@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-s3-glacier/refs/heads/main/json-structure/amazon-s3-glacier-api-job-parameters-structure.json",
+  "description": "JobParameters schema from api",
+  "type": "object",
+  "properties": {
+    "Type": {
+      "type": "string",
+      "enum": [
+        "archive-retrieval",
+        "inventory-retrieval",
+        "select"
+      ]
+    },
+    "ArchiveId": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "SNSTopic": {
+      "type": "string"
+    },
+    "RetrievalByteRange": {
+      "type": "string"
+    },
+    "Tier": {
+      "type": "string",
+      "enum": [
+        "Expedited",
+        "Standard",
+        "Bulk"
+      ]
+    }
+  },
+  "name": "JobParameters"
+}

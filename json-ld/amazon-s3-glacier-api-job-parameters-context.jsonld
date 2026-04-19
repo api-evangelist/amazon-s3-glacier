@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aws": "https://aws.amazon.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "JobParameters": "aws:JobParameters",
+    "Type": {
+      "@id": "aws:Type",
+      "@type": "xsd:string"
+    },
+    "ArchiveId": {
+      "@id": "aws:ArchiveId",
+      "@type": "xsd:string"
+    },
+    "Description": {
+      "@id": "aws:Description",
+      "@type": "xsd:string"
+    },
+    "SNSTopic": {
+      "@id": "aws:SNSTopic",
+      "@type": "xsd:string"
+    },
+    "RetrievalByteRange": {
+      "@id": "aws:RetrievalByteRange",
+      "@type": "xsd:string"
+    },
+    "Tier": {
+      "@id": "aws:Tier",
+      "@type": "xsd:string"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+naftiko: 1.0.0-alpha1
+info:
+  label: Amazon S3 Glacier Operations
+  description: Workflow capability for Amazon S3 Glacier. Enables automation of Amazon S3 Glacier resources for cloud operations teams.
+  tags:
+  - Amazon S3 Glacier
+  - AWS
+  - Cloud Operations
+  created: '2026-04-19'
+  modified: '2026-04-19'
+binds:
+- namespace: env
+  keys:
+    AWS_ACCESS_KEY: AWS_ACCESS_KEY
+    AWS_SECRET_KEY: AWS_SECRET_KEY
+capability:
+  consumes:
+  - import: amazon-s3-glacier
+    location: ./shared/amazon-s3-glacier.yaml
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: amazon-s3-glacier-api
+    description: Unified REST API for Amazon S3 Glacier operations.
+    resources:
+    - path: /v1/resources
+      name: resources
+      description: Amazon S3 Glacier resources
+      operations:
+      - method: GET
+        name: list-resources
+        description: List Amazon S3 Glacier resources
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: amazon-s3-glacier-mcp
+    transport: http
+    description: MCP server for AI-assisted Amazon S3 Glacier operations.
+    tools:
+    - name: list-amazon-s3-glacier-resources
+      description: List Amazon S3 Glacier resources
+      hints:
+        readOnly: true
+      outputParameters:
+      - type: object
+        mapping: $.

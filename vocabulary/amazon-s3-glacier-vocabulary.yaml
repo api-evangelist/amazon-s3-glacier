@@ -1,0 +1,60 @@
+vocabulary: 1.0.0
+info:
+  provider: Amazon S3 Glacier
+  description: Vocabulary for Amazon S3 Glacier APIs covering operational and capability dimensions
+  created: '2026-04-19'
+  modified: '2026-04-19'
+operational:
+  apis:
+  - name: Amazon S3 Glacier
+    namespace: amazon-s3-glacier
+    status: active
+  resources:
+  - name: accountId
+    api: amazon-s3-glacier-api-openapi
+    actions:
+    - listVaults
+  actions:
+  - name: list
+    httpMethod: GET
+    pattern: read
+  - name: get
+    httpMethod: GET
+    pattern: read
+  - name: create
+    httpMethod: PUT
+    pattern: write
+  - name: delete
+    httpMethod: DELETE
+    pattern: write
+  - name: post
+    httpMethod: POST
+    pattern: write
+  schemas:
+    core:
+    - amazon-s3-glacier-api-describe-vault-output
+    - amazon-s3-glacier-api-job-parameters
+    - amazon-s3-glacier-api-list-vaults-output
+    - amazon-s3-glacier-vault
+  authentication:
+    schemes:
+    - type: bearer
+      description: AWS Signature V4
+capability:
+  workflows:
+  - name: Amazon S3 Glacier Operations
+    file: capabilities/amazon-s3-glacier.yaml
+    description: Automation workflow for Amazon S3 Glacier
+  personas:
+  - id: cloud-engineer
+    name: Cloud Engineer
+    description: Engineer managing Amazon S3 Glacier resources
+  domains:
+  - name: Cloud Operations
+    description: AWS cloud resource management
+crossReference:
+- resource: accountId
+  operations:
+  - listVaults
+  workflows:
+  - Amazon S3 Glacier Operations

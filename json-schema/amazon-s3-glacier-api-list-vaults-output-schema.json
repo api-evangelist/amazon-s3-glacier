@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-s3-glacier/refs/heads/main/json-schema/amazon-s3-glacier-api-list-vaults-output-schema.json",
+  "title": "ListVaultsOutput",
+  "description": "ListVaultsOutput schema from api",
+  "type": "object",
+  "properties": {
+    "VaultList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DescribeVaultOutput"
+      }
+    },
+    "Marker": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aws": "https://aws.amazon.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Amazon S3 Glacier Vault": "aws:Amazon S3 Glacier Vault",
+    "VaultARN": {
+      "@id": "aws:VaultARN",
+      "@type": "xsd:string"
+    },
+    "VaultName": {
+      "@id": "aws:VaultName",
+      "@type": "xsd:string"
+    },
+    "CreationDate": {
+      "@id": "aws:CreationDate",
+      "@type": "xsd:dateTime"
+    },
+    "LastInventoryDate": {
+      "@id": "aws:LastInventoryDate",
+      "@type": "xsd:dateTime"
+    },
+    "NumberOfArchives": {
+      "@id": "aws:NumberOfArchives",
+      "@type": "xsd:integer"
+    },
+    "SizeInBytes": {
+      "@id": "aws:SizeInBytes",
+      "@type": "xsd:integer"
+    },
+    "VaultAccessPolicy": {
+      "@id": "aws:VaultAccessPolicy",
+      "@type": "xsd:string"
+    },
+    "VaultNotificationConfig": {
+      "@id": "aws:VaultNotificationConfig",
+      "@type": "xsd:string"
+    },
+    "Tags": {
+      "@id": "aws:Tags",
+      "@type": "xsd:string"
+    }
+  }
+}

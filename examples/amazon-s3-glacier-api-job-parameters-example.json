@@ -1,0 +1,8 @@
+{
+  "Type": "archive-retrieval",
+  "ArchiveId": "abc123",
+  "Description": "Example description",
+  "SNSTopic": "example-value",
+  "RetrievalByteRange": "example-value",
+  "Tier": "Expedited"
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-s3-glacier/refs/heads/main/json-schema/amazon-s3-glacier-api-describe-vault-output-schema.json",
+  "title": "DescribeVaultOutput",
+  "description": "DescribeVaultOutput schema from api",
+  "type": "object",
+  "properties": {
+    "VaultARN": {
+      "type": "string"
+    },
+    "VaultName": {
+      "type": "string"
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "LastInventoryDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "NumberOfArchives": {
+      "type": "integer"
+    },
+    "SizeInBytes": {
+      "type": "integer"
+    }
+  }
+}

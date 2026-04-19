@@ -1,0 +1,87 @@
+naftiko: 1.0.0-alpha1
+info:
+  label: Amazon S3 Glacier REST API
+  description: >-
+    Amazon S3 Glacier is a secure, durable, and extremely low-cost storage
+    service for data archiving and online backup. This API enables management
+    of vaults, archives, retrieval jobs, vault access policies, and data
+    retrieval configurations.
+  tags:
+  - Amazon S3 Glacier
+  - AWS
+  created: '2026-04-19'
+  modified: '2026-04-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_S3_GLACIER_API_KEY: AMAZON_S3_GLACIER_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-s3-glacier
+    baseUri: https://glacier.{region}.amazonaws.com
+    description: Amazon S3 Glacier REST API
+    authentication:
+      type: bearer
+      token: '{{AWS_ACCESS_KEY}}'
+    resources:
+    - name: accountId
+      path: /{accountId}/vaults
+      description: accountId operations
+      operations:
+      - name: listVaults
+        method: GET
+        description: Amazon S3 Glacier List Vaults
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: describeVault
+        method: GET
+        description: Amazon S3 Glacier Describe Vault
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createVault
+        method: PUT
+        description: Amazon S3 Glacier Create Vault
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deleteVault
+        method: DELETE
+        description: Amazon S3 Glacier Delete Vault
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: uploadArchive
+        method: POST
+        description: Amazon S3 Glacier Upload Archive
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: listJobs
+        method: GET
+        description: Amazon S3 Glacier List Jobs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: initiateJob
+        method: POST
+        description: Amazon S3 Glacier Initiate Job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.

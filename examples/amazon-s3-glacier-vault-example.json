@@ -1,0 +1,11 @@
+{
+  "VaultARN": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "VaultName": "Example Resource",
+  "CreationDate": "2026-04-19T00:00:00Z",
+  "LastInventoryDate": "2026-04-19T00:00:00Z",
+  "NumberOfArchives": 100,
+  "SizeInBytes": 100,
+  "VaultAccessPolicy": "example-value",
+  "VaultNotificationConfig": "example-value",
+  "Tags": {}
+}
