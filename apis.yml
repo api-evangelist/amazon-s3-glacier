@@ -57,15 +57,15 @@ common:
   url: https://health.aws.amazon.com/health/status
 - type: Contact
   url: https://aws.amazon.com/contact-us/
-- type: JSON-LD
+- type: JSONLD
   url: json-ld/amazon-s3-glacier-api-describe-vault-context.jsonld
-- type: JSON-LD
+- type: JSONLD
   url: json-ld/amazon-s3-glacier-api-job-parameters-context.jsonld
-- type: JSON-LD
+- type: JSONLD
   url: json-ld/amazon-s3-glacier-api-list-vaults-context.jsonld
-- type: JSON-LD
+- type: JSONLD
   url: json-ld/amazon-s3-glacier-context.jsonld
-- type: JSON-LD
+- type: JSONLD
   url: json-ld/amazon-s3-glacier-vault-context.jsonld
 - type: JSONSchema
   url: json-schema/amazon-s3-glacier-api-describe-vault-output-schema.json
