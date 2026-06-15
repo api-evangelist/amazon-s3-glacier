@@ -1,0 +1,952 @@
+{
+  "item": [
+    {
+      "id": "dcd815b4-dd2d-4894-8eec-720ea95e2790",
+      "name": "Vaults",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cf2755a1-a19a-4133-ae54-37a60901b55b",
+          "name": "Amazon S3 Glacier List Vaults",
+          "request": {
+            "name": "Amazon S3 Glacier List Vaults",
+            "description": {
+              "content": "Returns a list of vaults owned by the calling user's account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":accountId",
+                "vaults"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "marker",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "-",
+                  "key": "accountId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3d6640ad-47ce-4ea8-82dd-62f205b00ec6",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":accountId",
+                    "vaults"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "-",
+                      "key": "accountId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"VaultList\": [\n    {\n      \"VaultARN\": \"string\",\n      \"VaultName\": \"string\",\n      \"CreationDate\": \"1995-12-11T20:04:04.033Z\",\n      \"LastInventoryDate\": \"1998-11-03T20:47:13.037Z\",\n      \"NumberOfArchives\": 9541,\n      \"SizeInBytes\": 5919\n    },\n    {\n      \"VaultARN\": \"string\",\n      \"VaultName\": \"string\",\n      \"CreationDate\": \"1956-07-26T19:20:47.453Z\",\n      \"LastInventoryDate\": \"1999-09-11T09:11:10.807Z\",\n      \"NumberOfArchives\": 2960,\n      \"SizeInBytes\": 416\n    }\n  ],\n  \"Marker\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3f1b9a6f-f475-47c0-a27b-c546b45a0c6f",
+          "name": "Amazon S3 Glacier Create Vault",
+          "request": {
+            "name": "Amazon S3 Glacier Create Vault",
+            "description": {
+              "content": "Creates a vault for storing archives.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":accountId",
+                "vaults",
+                ":vaultName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "-",
+                  "key": "accountId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vaultName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6ea69094-831a-4de7-b72f-e706218d7bd7",
+              "name": "Vault created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":accountId",
+                    "vaults",
+                    ":vaultName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "-",
+                      "key": "accountId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vaultName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Location",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2ea144b5-d0ce-4859-b535-5427efa74dce",
+          "name": "Amazon S3 Glacier Describe Vault",
+          "request": {
+            "name": "Amazon S3 Glacier Describe Vault",
+            "description": {
+              "content": "Returns information about a vault including creation date, number of archives, and total size.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":accountId",
+                "vaults",
+                ":vaultName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "-",
+                  "key": "accountId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vaultName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d82c1876-750e-4e52-85c9-aaf37cfc3869",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":accountId",
+                    "vaults",
+                    ":vaultName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "-",
+                      "key": "accountId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vaultName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"VaultARN\": \"string\",\n  \"VaultName\": \"string\",\n  \"CreationDate\": \"1995-07-03T23:11:18.041Z\",\n  \"LastInventoryDate\": \"1981-05-13T14:03:00.281Z\",\n  \"NumberOfArchives\": 3515,\n  \"SizeInBytes\": 8620\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d7958898-894c-4251-9d5a-3d8b2432d952",
+          "name": "Amazon S3 Glacier Delete Vault",
+          "request": {
+            "name": "Amazon S3 Glacier Delete Vault",
+            "description": {
+              "content": "Deletes an empty vault. The vault must contain no archives.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":accountId",
+                "vaults",
+                ":vaultName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "-",
+                  "key": "accountId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vaultName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b42441be-bb71-4c3e-bd50-0e7a34d7ab09",
+              "name": "Vault deleted successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":accountId",
+                    "vaults",
+                    ":vaultName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "-",
+                      "key": "accountId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vaultName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a49c8b86-955b-43cd-be4a-613f4d7993b0",
+          "name": "Amazon S3 Glacier Upload Archive",
+          "request": {
+            "name": "Amazon S3 Glacier Upload Archive",
+            "description": {
+              "content": "Adds an archive to a vault.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":accountId",
+                "vaults",
+                ":vaultName",
+                "archives"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "-",
+                  "key": "accountId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vaultName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "x-amz-archive-description",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "x-amz-sha256-tree-hash",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<binary>"
+            }
+          },
+          "response": [
+            {
+              "id": "1f4ba005-aac8-49f5-84cb-407cff58d689",
+              "name": "Archive uploaded successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":accountId",
+                    "vaults",
+                    ":vaultName",
+                    "archives"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "-",
+                      "key": "accountId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vaultName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "x-amz-archive-description",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "x-amz-sha256-tree-hash",
+                    "value": "<string>",
+                    "description": ""
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<binary>"
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a1439239-323a-41d1-b430-d7b8e2aecf0c",
+          "name": "Amazon S3 Glacier Initiate Job",
+          "request": {
+            "name": "Amazon S3 Glacier Initiate Job",
+            "description": {
+              "content": "Initiates a job of the specified type, such as archive retrieval or vault inventory retrieval.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":accountId",
+                "vaults",
+                ":vaultName",
+                "jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "-",
+                  "key": "accountId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vaultName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Type\": \"<string>\",\n  \"ArchiveId\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"SNSTopic\": \"<string>\",\n  \"RetrievalByteRange\": \"<string>\",\n  \"Tier\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0332c5ef-8ddd-47b8-a5a4-ce573d43c72d",
+              "name": "Job initiated successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":accountId",
+                    "vaults",
+                    ":vaultName",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "-",
+                      "key": "accountId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vaultName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Type\": \"<string>\",\n  \"ArchiveId\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"SNSTopic\": \"<string>\",\n  \"RetrievalByteRange\": \"<string>\",\n  \"Tier\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d2a84ad6-9384-4850-a6c2-48c27f527fb9",
+          "name": "Amazon S3 Glacier List Jobs",
+          "request": {
+            "name": "Amazon S3 Glacier List Jobs",
+            "description": {
+              "content": "Lists jobs for a vault that are in progress or have recently finished.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":accountId",
+                "vaults",
+                ":vaultName",
+                "jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "-",
+                  "key": "accountId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vaultName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a3a4a5ac-8d0b-4f9c-a4f9-a7d9a561e24b",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":accountId",
+                    "vaults",
+                    ":vaultName",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "-",
+                      "key": "accountId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vaultName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-central-1,ap-northeast-1,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "us-east-1",
+      "key": "region"
+    },
+    {
+      "type": "string",
+      "value": "https://glacier.{{region}}.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "232f0fee-ae14-4da8-bd51-62b9e967225e",
+    "name": "Amazon S3 Glacier REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Amazon S3 Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup. This API enables management of vaults, archives, retrieval jobs, vault access policies, and data retrieval configurations.\n\nContact Support:\n Name: AWS Support",
+      "type": "text/plain"
+    }
+  }
+}
