@@ -50,7 +50,7 @@ common:
     url: https://github.com/aws
   - type: Portal
     url: https://console.aws.amazon.com/glacier/
-  - type: SignUp
+  - type: Signup
     url: https://signin.aws.amazon.com/signup?request_type=register
   - type: Login
     url: https://aws.amazon.com/console/
@@ -84,13 +84,13 @@ common:
     url: json-structure/amazon-s3-glacier-api-list-vaults-output-structure.json
   - type: JSONStructure
     url: json-structure/amazon-s3-glacier-vault-structure.json
-  - type: Example
+  - type: Examples
     url: examples/amazon-s3-glacier-api-describe-vault-output-example.json
-  - type: Example
+  - type: Examples
     url: examples/amazon-s3-glacier-api-job-parameters-example.json
-  - type: Example
+  - type: Examples
     url: examples/amazon-s3-glacier-api-list-vaults-output-example.json
-  - type: Example
+  - type: Examples
     url: examples/amazon-s3-glacier-vault-example.json
   - type: SpectralRules
     url: rules/amazon-s3-glacier-spectral-rules.yml
