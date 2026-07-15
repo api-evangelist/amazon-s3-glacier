@@ -34,6 +34,8 @@ apis:
       - type: FAQ
         url: https://aws.amazon.com/s3/faqs/
 common:
+  - type: AgenticAccess
+    url: agentic-access/amazon-s3-glacier-agentic-access.yml
   - type: TrustCenter
     url: security/amazon-s3-glacier-trust-center.yml
   - type: VulnerabilityDisclosure
