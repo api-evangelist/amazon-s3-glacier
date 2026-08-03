@@ -1,0 +1,14 @@
+{
+  "provider": "amazon-s3-glacier",
+  "sources": [
+    "amazon-s3-glacier-vaults-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-s3-glacier-vaults-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

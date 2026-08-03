@@ -1,0 +1,799 @@
+{
+  "info": {
+    "_postman_id": "99fa1d0f-f6a3-42b8-81e6-06313715fd06",
+    "name": "Amazon S3 Glacier REST Vaults API",
+    "description": "Amazon S3 Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup. This API enables management of vaults, archives, retrieval jobs, vault access policies, and data retrieval configurations.\n\nContact Support:\n Name: AWS Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:52:34.000Z",
+    "updatedAt": "2026-07-28T00:52:34.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-99fa1d0f-f6a3-42b8-81e6-06313715fd06"
+  },
+  "item": [
+    {
+      "name": "{accountId}",
+      "item": [
+        {
+          "name": "vaults",
+          "item": [
+            {
+              "name": "{vaultName}",
+              "item": [
+                {
+                  "name": "archives",
+                  "item": [
+                    {
+                      "name": "Amazon S3 Glacier Upload Archive",
+                      "id": "f84fa54a-aa74-4675-aa02-e56a3da86085",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "x-amz-archive-description",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "x-amz-sha256-tree-hash",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/octet-stream"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "<binary>"
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/:accountId/vaults/:vaultName/archives",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            ":accountId",
+                            "vaults",
+                            ":vaultName",
+                            "archives"
+                          ],
+                          "variable": [
+                            {
+                              "id": "a18d9ba1-2663-4e64-9df0-051b1d91947f",
+                              "key": "accountId",
+                              "value": "-",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "0a7287d0-b826-4075-b2dd-8cd9e54113db",
+                              "key": "vaultName",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Adds an archive to a vault."
+                      },
+                      "response": [
+                        {
+                          "id": "60ab87d2-fe40-4269-97bd-3007135835ad",
+                          "name": "Archive uploaded successfully",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "x-amz-archive-description",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "x-amz-sha256-tree-hash",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/octet-stream"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "<binary>"
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/:accountId/vaults/:vaultName/archives",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                ":accountId",
+                                "vaults",
+                                ":vaultName",
+                                "archives"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "accountId"
+                                },
+                                {
+                                  "key": "vaultName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T00:52:34.000Z",
+                          "updatedAt": "2026-07-28T00:52:34.000Z",
+                          "uid": "35240-60ab87d2-fe40-4269-97bd-3007135835ad"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T00:52:34.000Z",
+                      "updatedAt": "2026-07-28T00:52:34.000Z",
+                      "uid": "35240-f84fa54a-aa74-4675-aa02-e56a3da86085"
+                    }
+                  ],
+                  "id": "7d6f8034-5f6b-4808-bf63-9d9ecc9008de",
+                  "createdAt": "2026-07-28T00:52:34.000Z",
+                  "updatedAt": "2026-07-28T00:52:34.000Z",
+                  "uid": "35240-7d6f8034-5f6b-4808-bf63-9d9ecc9008de"
+                },
+                {
+                  "name": "jobs",
+                  "item": [
+                    {
+                      "name": "Amazon S3 Glacier Initiate Job",
+                      "id": "a7a4afc9-c453-4f9e-84b0-aa2e51d85f41",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"Type\": \"archive-retrieval\",\n  \"ArchiveId\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"SNSTopic\": \"<string>\",\n  \"RetrievalByteRange\": \"<string>\",\n  \"Tier\": \"Standard\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/:accountId/vaults/:vaultName/jobs",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            ":accountId",
+                            "vaults",
+                            ":vaultName",
+                            "jobs"
+                          ],
+                          "variable": [
+                            {
+                              "id": "2f372a78-e215-4a1e-9cf9-e2ead31b3486",
+                              "key": "accountId",
+                              "value": "-",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "8524f3a0-dca6-46fc-8636-57f5aff2e1a2",
+                              "key": "vaultName",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Initiates a job of the specified type, such as archive retrieval or vault inventory retrieval."
+                      },
+                      "response": [
+                        {
+                          "id": "95114e10-d354-4f5d-a2fb-52fa357b8d4f",
+                          "name": "Job initiated successfully",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Type\": \"archive-retrieval\",\n  \"ArchiveId\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"SNSTopic\": \"<string>\",\n  \"RetrievalByteRange\": \"<string>\",\n  \"Tier\": \"Standard\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/:accountId/vaults/:vaultName/jobs",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                ":accountId",
+                                "vaults",
+                                ":vaultName",
+                                "jobs"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "accountId"
+                                },
+                                {
+                                  "key": "vaultName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Accepted",
+                          "code": 202,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T00:52:34.000Z",
+                          "updatedAt": "2026-07-28T00:52:34.000Z",
+                          "uid": "35240-95114e10-d354-4f5d-a2fb-52fa357b8d4f"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T00:52:34.000Z",
+                      "updatedAt": "2026-07-28T00:52:34.000Z",
+                      "uid": "35240-a7a4afc9-c453-4f9e-84b0-aa2e51d85f41"
+                    },
+                    {
+                      "name": "Amazon S3 Glacier List Jobs",
+                      "id": "0e72d756-4d79-4d6b-b836-59a453f45d90",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/:accountId/vaults/:vaultName/jobs",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            ":accountId",
+                            "vaults",
+                            ":vaultName",
+                            "jobs"
+                          ],
+                          "variable": [
+                            {
+                              "id": "433c7727-31c5-4416-a614-678867186222",
+                              "key": "accountId",
+                              "value": "-",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "95e97c99-d38d-43f1-974c-11667ea2d6c9",
+                              "key": "vaultName",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Lists jobs for a vault that are in progress or have recently finished."
+                      },
+                      "response": [
+                        {
+                          "id": "470facae-7eff-4f7f-88ba-853a3884c8df",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/:accountId/vaults/:vaultName/jobs",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                ":accountId",
+                                "vaults",
+                                ":vaultName",
+                                "jobs"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "accountId"
+                                },
+                                {
+                                  "key": "vaultName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T00:52:34.000Z",
+                          "updatedAt": "2026-07-28T00:52:34.000Z",
+                          "uid": "35240-470facae-7eff-4f7f-88ba-853a3884c8df"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T00:52:34.000Z",
+                      "updatedAt": "2026-07-28T00:52:34.000Z",
+                      "uid": "35240-0e72d756-4d79-4d6b-b836-59a453f45d90"
+                    }
+                  ],
+                  "id": "e477067a-e1b8-42a0-b600-1ecb7e53a376",
+                  "createdAt": "2026-07-28T00:52:34.000Z",
+                  "updatedAt": "2026-07-28T00:52:34.000Z",
+                  "uid": "35240-e477067a-e1b8-42a0-b600-1ecb7e53a376"
+                },
+                {
+                  "name": "Amazon S3 Glacier Create Vault",
+                  "id": "28527e67-489a-47b9-a117-757d55121d35",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/:accountId/vaults/:vaultName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":accountId",
+                        "vaults",
+                        ":vaultName"
+                      ],
+                      "variable": [
+                        {
+                          "id": "d8b93cc4-364a-4e78-8d12-eb03380b0b13",
+                          "key": "accountId",
+                          "value": "-",
+                          "description": "(Required) "
+                        },
+                        {
+                          "id": "77b1121f-bdcd-41b3-b521-00b4cb752a91",
+                          "key": "vaultName",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Creates a vault for storing archives."
+                  },
+                  "response": [
+                    {
+                      "id": "cad3476e-99a5-4477-a2de-d7dfbfe8b6ae",
+                      "name": "Vault created successfully",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/:accountId/vaults/:vaultName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            ":accountId",
+                            "vaults",
+                            ":vaultName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "accountId"
+                            },
+                            {
+                              "key": "vaultName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
+                          "key": "Location",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T00:52:34.000Z",
+                      "updatedAt": "2026-07-28T00:52:34.000Z",
+                      "uid": "35240-cad3476e-99a5-4477-a2de-d7dfbfe8b6ae"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T00:52:34.000Z",
+                  "updatedAt": "2026-07-28T00:52:34.000Z",
+                  "uid": "35240-28527e67-489a-47b9-a117-757d55121d35"
+                },
+                {
+                  "name": "Amazon S3 Glacier Describe Vault",
+                  "id": "853a26ff-070a-40c3-b9d6-f22212e33fbc",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/:accountId/vaults/:vaultName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":accountId",
+                        "vaults",
+                        ":vaultName"
+                      ],
+                      "variable": [
+                        {
+                          "id": "61a61e90-592a-4d17-a1c2-3e22039980cc",
+                          "key": "accountId",
+                          "value": "-",
+                          "description": "(Required) "
+                        },
+                        {
+                          "id": "f0e7dafe-7a72-4cb5-a97e-2680ca7ad566",
+                          "key": "vaultName",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Returns information about a vault including creation date, number of archives, and total size."
+                  },
+                  "response": [
+                    {
+                      "id": "28a2f676-235d-432c-b0bb-6284db04039e",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/:accountId/vaults/:vaultName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            ":accountId",
+                            "vaults",
+                            ":vaultName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "accountId"
+                            },
+                            {
+                              "key": "vaultName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"VaultARN\": \"<string>\",\n  \"VaultName\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\",\n  \"LastInventoryDate\": \"<dateTime>\",\n  \"NumberOfArchives\": \"<integer>\",\n  \"SizeInBytes\": \"<integer>\"\n}",
+                      "createdAt": "2026-07-28T00:52:34.000Z",
+                      "updatedAt": "2026-07-28T00:52:34.000Z",
+                      "uid": "35240-28a2f676-235d-432c-b0bb-6284db04039e"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T00:52:34.000Z",
+                  "updatedAt": "2026-07-28T00:52:34.000Z",
+                  "uid": "35240-853a26ff-070a-40c3-b9d6-f22212e33fbc"
+                },
+                {
+                  "name": "Amazon S3 Glacier Delete Vault",
+                  "id": "36133fd0-027e-4999-9936-4ac75e2aa711",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/:accountId/vaults/:vaultName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":accountId",
+                        "vaults",
+                        ":vaultName"
+                      ],
+                      "variable": [
+                        {
+                          "id": "87f18fc3-d00e-4819-bfed-9a532834d584",
+                          "key": "accountId",
+                          "value": "-",
+                          "description": "(Required) "
+                        },
+                        {
+                          "id": "25d6d105-52f2-42c3-b5b5-595b1f1af011",
+                          "key": "vaultName",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Deletes an empty vault. The vault must contain no archives."
+                  },
+                  "response": [
+                    {
+                      "id": "d344c770-0b31-433b-8d4f-b269953381ab",
+                      "name": "Vault deleted successfully",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/:accountId/vaults/:vaultName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            ":accountId",
+                            "vaults",
+                            ":vaultName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "accountId"
+                            },
+                            {
+                              "key": "vaultName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "No Content",
+                      "code": 204,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T00:52:34.000Z",
+                      "updatedAt": "2026-07-28T00:52:34.000Z",
+                      "uid": "35240-d344c770-0b31-433b-8d4f-b269953381ab"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T00:52:34.000Z",
+                  "updatedAt": "2026-07-28T00:52:34.000Z",
+                  "uid": "35240-36133fd0-027e-4999-9936-4ac75e2aa711"
+                }
+              ],
+              "id": "2f2fcf2c-1679-4be7-ab39-def01ffd98fd",
+              "createdAt": "2026-07-28T00:52:34.000Z",
+              "updatedAt": "2026-07-28T00:52:34.000Z",
+              "uid": "35240-2f2fcf2c-1679-4be7-ab39-def01ffd98fd"
+            },
+            {
+              "name": "Amazon S3 Glacier List Vaults",
+              "id": "3a684c70-0178-4b3b-8f65-dd84b427aa2e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/:accountId/vaults?marker=<string>&limit=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ":accountId",
+                    "vaults"
+                  ],
+                  "query": [
+                    {
+                      "key": "marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "237ca95c-2592-4f2c-acf1-0b85de8bba5e",
+                      "key": "accountId",
+                      "value": "-",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Returns a list of vaults owned by the calling user's account."
+              },
+              "response": [
+                {
+                  "id": "5c3dcdc6-cd4c-4f7f-bd6d-4083c840d718",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/:accountId/vaults?marker=<string>&limit=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        ":accountId",
+                        "vaults"
+                      ],
+                      "query": [
+                        {
+                          "key": "marker",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "limit",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "accountId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"VaultList\": [\n    {\n      \"VaultARN\": \"<string>\",\n      \"VaultName\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\",\n      \"LastInventoryDate\": \"<dateTime>\",\n      \"NumberOfArchives\": \"<integer>\",\n      \"SizeInBytes\": \"<integer>\"\n    },\n    {\n      \"VaultARN\": \"<string>\",\n      \"VaultName\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\",\n      \"LastInventoryDate\": \"<dateTime>\",\n      \"NumberOfArchives\": \"<integer>\",\n      \"SizeInBytes\": \"<integer>\"\n    }\n  ],\n  \"Marker\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T00:52:34.000Z",
+                  "updatedAt": "2026-07-28T00:52:34.000Z",
+                  "uid": "35240-5c3dcdc6-cd4c-4f7f-bd6d-4083c840d718"
+                }
+              ],
+              "createdAt": "2026-07-28T00:52:34.000Z",
+              "updatedAt": "2026-07-28T00:52:34.000Z",
+              "uid": "35240-3a684c70-0178-4b3b-8f65-dd84b427aa2e"
+            }
+          ],
+          "id": "eef6eb6b-28a6-4194-9512-617e183e4126",
+          "createdAt": "2026-07-28T00:52:34.000Z",
+          "updatedAt": "2026-07-28T00:52:34.000Z",
+          "uid": "35240-eef6eb6b-28a6-4194-9512-617e183e4126"
+        }
+      ],
+      "id": "44a79805-d8e1-4e78-b476-3ef8bdeabd27",
+      "createdAt": "2026-07-28T00:52:34.000Z",
+      "updatedAt": "2026-07-28T00:52:34.000Z",
+      "uid": "35240-44a79805-d8e1-4e78-b476-3ef8bdeabd27"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://glacier.{{region}}.amazonaws.com"
+    }
+  ]
+}
