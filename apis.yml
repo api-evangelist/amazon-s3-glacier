@@ -116,7 +116,7 @@ common:
   - type: Vocabulary
     url: vocabulary/amazon-s3-glacier-vocabulary.yaml
   - type: OpenAPI
-    url: openapi/amazon-s3-glacier-api-openapi.yml
+    url: openapi/_original/amazon-s3-glacier-api-openapi.yml
   - type: Integrations
     url: https://aws.amazon.com/partners/
 integrations:
