@@ -1,0 +1,206 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon S3 Glacier REST Vaults API",
+    "version": "2012-06-01"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Vaults",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon S3 Glacier List Vaults",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://glacier.{region}.amazonaws.com/:accountId/vaults",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "marker",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of vaults owned by the calling user's account."
+        },
+        {
+          "info": {
+            "name": "Amazon S3 Glacier Describe Vault",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://glacier.{region}.amazonaws.com/:accountId/vaults/:vaultName",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "vaultName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns information about a vault including creation date, number of archives, and total size."
+        },
+        {
+          "info": {
+            "name": "Amazon S3 Glacier Create Vault",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://glacier.{region}.amazonaws.com/:accountId/vaults/:vaultName",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "vaultName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Creates a vault for storing archives."
+        },
+        {
+          "info": {
+            "name": "Amazon S3 Glacier Delete Vault",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://glacier.{region}.amazonaws.com/:accountId/vaults/:vaultName",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "vaultName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes an empty vault. The vault must contain no archives."
+        },
+        {
+          "info": {
+            "name": "Amazon S3 Glacier Upload Archive",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://glacier.{region}.amazonaws.com/:accountId/vaults/:vaultName/archives",
+            "headers": [
+              {
+                "name": "x-amz-archive-description",
+                "value": ""
+              },
+              {
+                "name": "x-amz-sha256-tree-hash",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "vaultName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Adds an archive to a vault."
+        },
+        {
+          "info": {
+            "name": "Amazon S3 Glacier List Jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://glacier.{region}.amazonaws.com/:accountId/vaults/:vaultName/jobs",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "vaultName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists jobs for a vault that are in progress or have recently finished."
+        },
+        {
+          "info": {
+            "name": "Amazon S3 Glacier Initiate Job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://glacier.{region}.amazonaws.com/:accountId/vaults/:vaultName/jobs",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "vaultName",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Initiates a job of the specified type, such as archive retrieval or vault inventory retrieval."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
