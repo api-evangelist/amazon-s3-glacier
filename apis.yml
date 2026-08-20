@@ -29,6 +29,8 @@ apis:
   humanURL: https://aws.amazon.com/s3/storage-classes/glacier/
   baseURL: https://glacier.amazonaws.com
   tags:
+  - Vault
+  tags_raw:
   - Vaults
   properties:
   - type: OpenAPI
