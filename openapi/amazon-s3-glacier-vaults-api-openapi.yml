@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Amazon S3 Glacier REST Vaults API
   description: Amazon S3 Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup. This API enables management of vaults, archives, retrieval jobs, vault access policies, and data retrieval configurations.
@@ -235,6 +235,23 @@ components:
             $ref: '#/components/schemas/DescribeVaultOutput'
         Marker:
           type: string
+    DescribeVaultOutput:
+      type: object
+      properties:
+        VaultARN:
+          type: string
+        VaultName:
+          type: string
+        CreationDate:
+          type: string
+          format: date-time
+        LastInventoryDate:
+          type: string
+          format: date-time
+        NumberOfArchives:
+          type: integer
+        SizeInBytes:
+          type: integer
     JobParameters:
       type: object
       properties:
@@ -258,23 +275,6 @@ components:
           - Expedited
           - Standard
           - Bulk
-    DescribeVaultOutput:
-      type: object
-      properties:
-        VaultARN:
-          type: string
-        VaultName:
-          type: string
-        CreationDate:
-          type: string
-          format: date-time
-        LastInventoryDate:
-          type: string
-          format: date-time
-        NumberOfArchives:
-          type: integer
-        SizeInBytes:
-          type: integer
   securitySchemes:
     sigv4:
       type: apiKey
