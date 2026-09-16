@@ -1,9 +1,8 @@
 name: Amazon S3 Glacier
-description: >-
-  Amazon S3 Glacier is a secure, durable, and extremely low-cost Amazon S3 storage class purpose-built for long-term
-  data archiving and digital preservation. It provides comprehensive security and compliance capabilities that can help
-  meet even the most stringent regulatory requirements, with retrieval options ranging from minutes to hours depending
-  on your access needs.
+description: Amazon S3 Glacier is a secure, durable, and extremely low-cost Amazon S3 storage class purpose-built
+  for long-term data archiving and digital preservation. It provides comprehensive security and compliance
+  capabilities that can help meet even the most stringent regulatory requirements, with retrieval options
+  ranging from minutes to hours depending on your access needs.
 deliveryModel:
   model: saas
   open_source: false
@@ -34,7 +33,7 @@ accessModel:
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://raw.githubusercontent.com/api-evangelist/amazon-s3-glacier/refs/heads/main/apis.yml
 created: '2024-01-15'
-modified: '2026-05-19'
+modified: '2026-09-16'
 apis:
 - aid: amazon-s3-glacier:amazon-s3-glacier-vaults-api
   name: Amazon S3 Glacier Vaults API
@@ -57,101 +56,103 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/s3/faqs/
 common:
-  - type: PostmanWorkspace
-    url: https://www.postman.com/kinlaneapi/amazon-s3-glacier/overview
-  - type: AgenticAccess
-    url: agentic-access/amazon-s3-glacier-agentic-access.yml
-  - type: TrustCenter
-    url: security/amazon-s3-glacier-trust-center.yml
-  - type: VulnerabilityDisclosure
-    url: security/amazon-s3-glacier-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/amazon-s3-glacier-domain-security.yml
-  - type: Authentication
-    url: authentication/amazon-s3-glacier-authentication.yml
-  - type: Portal
-    url: https://aws.amazon.com/
-  - type: Portal
-    url: https://aws.amazon.com/s3/storage-classes/glacier/
-  - type: Documentation
-    url: https://docs.aws.amazon.com/amazonglacier/
-  - type: TermsOfService
-    url: https://aws.amazon.com/service-terms/
-  - type: PrivacyPolicy
-    url: https://aws.amazon.com/privacy/
-  - type: Support
-    url: https://aws.amazon.com/premiumsupport/
-  - type: GitHubOrganization
-    url: https://github.com/aws
-  - type: Portal
-    url: https://console.aws.amazon.com/glacier/
-  - type: Signup
-    url: https://signin.aws.amazon.com/signup?request_type=register
-  - type: Login
-    url: https://aws.amazon.com/console/
-  - type: StatusPage
-    url: https://health.aws.amazon.com/health/status
-  - type: Contact
-    url: https://aws.amazon.com/contact-us/
-  - type: JSONLD
-    url: json-ld/amazon-s3-glacier-api-describe-vault-context.jsonld
-  - type: JSONLD
-    url: json-ld/amazon-s3-glacier-api-job-parameters-context.jsonld
-  - type: JSONLD
-    url: json-ld/amazon-s3-glacier-api-list-vaults-context.jsonld
-  - type: JSONLD
-    url: json-ld/amazon-s3-glacier-context.jsonld
-  - type: JSONLD
-    url: json-ld/amazon-s3-glacier-vault-context.jsonld
-  - type: JSONSchema
-    url: json-schema/amazon-s3-glacier-api-describe-vault-output-schema.json
-  - type: JSONSchema
-    url: json-schema/amazon-s3-glacier-api-job-parameters-schema.json
-  - type: JSONSchema
-    url: json-schema/amazon-s3-glacier-api-list-vaults-output-schema.json
-  - type: JSONSchema
-    url: json-schema/amazon-s3-glacier-vault-schema.json
-  - type: JSONStructure
-    url: json-structure/amazon-s3-glacier-api-describe-vault-output-structure.json
-  - type: JSONStructure
-    url: json-structure/amazon-s3-glacier-api-job-parameters-structure.json
-  - type: JSONStructure
-    url: json-structure/amazon-s3-glacier-api-list-vaults-output-structure.json
-  - type: JSONStructure
-    url: json-structure/amazon-s3-glacier-vault-structure.json
-  - type: Examples
-    url: examples/amazon-s3-glacier-api-describe-vault-output-example.json
-  - type: Examples
-    url: examples/amazon-s3-glacier-api-job-parameters-example.json
-  - type: Examples
-    url: examples/amazon-s3-glacier-api-list-vaults-output-example.json
-  - type: Examples
-    url: examples/amazon-s3-glacier-vault-example.json
-  - type: SpectralRules
-    url: rules/amazon-s3-glacier-spectral-rules.yml
-  - type: Vocabulary
-    url: vocabulary/amazon-s3-glacier-vocabulary.yaml
-  - type: OpenAPI
-    url: openapi/_original/amazon-s3-glacier-api-openapi.yml
-  - type: Integrations
-    url: https://aws.amazon.com/partners/
+- type: Website
+  url: https://amazon.com
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-s3-glacier/overview
+- type: AgenticAccess
+  url: agentic-access/amazon-s3-glacier-agentic-access.yml
+- type: TrustCenter
+  url: security/amazon-s3-glacier-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-s3-glacier-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-s3-glacier-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-s3-glacier-authentication.yml
+- type: Portal
+  url: https://aws.amazon.com/
+- type: Portal
+  url: https://aws.amazon.com/s3/storage-classes/glacier/
+- type: Documentation
+  url: https://docs.aws.amazon.com/amazonglacier/
+- type: TermsOfService
+  url: https://aws.amazon.com/service-terms/
+- type: PrivacyPolicy
+  url: https://aws.amazon.com/privacy/
+- type: Support
+  url: https://aws.amazon.com/premiumsupport/
+- type: GitHubOrganization
+  url: https://github.com/aws
+- type: Portal
+  url: https://console.aws.amazon.com/glacier/
+- type: Signup
+  url: https://signin.aws.amazon.com/signup?request_type=register
+- type: Login
+  url: https://aws.amazon.com/console/
+- type: StatusPage
+  url: https://health.aws.amazon.com/health/status
+- type: Contact
+  url: https://aws.amazon.com/contact-us/
+- type: JSONLD
+  url: json-ld/amazon-s3-glacier-api-describe-vault-context.jsonld
+- type: JSONLD
+  url: json-ld/amazon-s3-glacier-api-job-parameters-context.jsonld
+- type: JSONLD
+  url: json-ld/amazon-s3-glacier-api-list-vaults-context.jsonld
+- type: JSONLD
+  url: json-ld/amazon-s3-glacier-context.jsonld
+- type: JSONLD
+  url: json-ld/amazon-s3-glacier-vault-context.jsonld
+- type: JSONSchema
+  url: json-schema/amazon-s3-glacier-api-describe-vault-output-schema.json
+- type: JSONSchema
+  url: json-schema/amazon-s3-glacier-api-job-parameters-schema.json
+- type: JSONSchema
+  url: json-schema/amazon-s3-glacier-api-list-vaults-output-schema.json
+- type: JSONSchema
+  url: json-schema/amazon-s3-glacier-vault-schema.json
+- type: JSONStructure
+  url: json-structure/amazon-s3-glacier-api-describe-vault-output-structure.json
+- type: JSONStructure
+  url: json-structure/amazon-s3-glacier-api-job-parameters-structure.json
+- type: JSONStructure
+  url: json-structure/amazon-s3-glacier-api-list-vaults-output-structure.json
+- type: JSONStructure
+  url: json-structure/amazon-s3-glacier-vault-structure.json
+- type: Examples
+  url: examples/amazon-s3-glacier-api-describe-vault-output-example.json
+- type: Examples
+  url: examples/amazon-s3-glacier-api-job-parameters-example.json
+- type: Examples
+  url: examples/amazon-s3-glacier-api-list-vaults-output-example.json
+- type: Examples
+  url: examples/amazon-s3-glacier-vault-example.json
+- type: SpectralRules
+  url: rules/amazon-s3-glacier-spectral-rules.yml
+- type: Vocabulary
+  url: vocabulary/amazon-s3-glacier-vocabulary.yaml
+- type: OpenAPI
+  url: openapi/_original/amazon-s3-glacier-api-openapi.yml
+- type: Integrations
+  url: https://aws.amazon.com/partners/
 integrations:
-  - name: Partner Programs
-  - name: Resources
-  - name: Success Stories
-  - name: Work with an AWS Partner
-  - name: AWS Marketplace
-  - name: AWS Partner Central
-  - name: Partner Paths
-  - name: co-sell with AWS
+- name: Partner Programs
+- name: Resources
+- name: Success Stories
+- name: Work with an AWS Partner
+- name: AWS Marketplace
+- name: AWS Partner Central
+- name: Partner Paths
+- name: co-sell with AWS
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
-    url: https://apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
+  url: https://apievangelist.com
 tags:
-  - Archive
-  - AWS
-  - Backup
-  - Storage
+- Archive
+- AWS
+- Backup
+- Storage
 x-parent: aws
 x-relationship: product
