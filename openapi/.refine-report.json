@@ -1,7 +1,7 @@
 {
   "provider": "amazon-s3-glacier",
   "sources": [
-    "amazon-s3-glacier-vaults-api-openapi.yml"
+    "_original/amazon-s3-glacier-api-openapi.yml"
   ],
   "outputs": [
     "amazon-s3-glacier-vaults-api-openapi.yml"
@@ -10,7 +10,11 @@
   "errors": [],
   "warnings": [],
   "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "amazon-s3-glacier-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "amazon-s3-glacier-vaults-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

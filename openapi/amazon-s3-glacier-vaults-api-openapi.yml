@@ -226,15 +226,6 @@ paths:
       - Vaults
 components:
   schemas:
-    ListVaultsOutput:
-      type: object
-      properties:
-        VaultList:
-          type: array
-          items:
-            $ref: '#/components/schemas/DescribeVaultOutput'
-        Marker:
-          type: string
     DescribeVaultOutput:
       type: object
       properties:
@@ -275,6 +266,15 @@ components:
           - Expedited
           - Standard
           - Bulk
+    ListVaultsOutput:
+      type: object
+      properties:
+        VaultList:
+          type: array
+          items:
+            $ref: '#/components/schemas/DescribeVaultOutput'
+        Marker:
+          type: string
   securitySchemes:
     sigv4:
       type: apiKey
