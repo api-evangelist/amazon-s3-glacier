@@ -57,7 +57,7 @@ apis:
     url: https://aws.amazon.com/s3/faqs/
 common:
 - type: Website
-  url: https://amazon.com
+  url: https://aws.amazon.com/s3/storage-classes/glacier/
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-s3-glacier/overview
 - type: AgenticAccess
@@ -159,5 +159,5 @@ tags_raw:
 - AWS
 - Backup
 - Storage
-x-parent: aws
+x-parent: amazon-web-services
 x-relationship: product
