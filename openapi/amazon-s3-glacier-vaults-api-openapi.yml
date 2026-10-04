@@ -226,32 +226,6 @@ paths:
       - Vaults
 components:
   schemas:
-    DescribeVaultOutput:
-      type: object
-      properties:
-        VaultARN:
-          type: string
-        VaultName:
-          type: string
-        CreationDate:
-          type: string
-          format: date-time
-        LastInventoryDate:
-          type: string
-          format: date-time
-        NumberOfArchives:
-          type: integer
-        SizeInBytes:
-          type: integer
-    ListVaultsOutput:
-      type: object
-      properties:
-        VaultList:
-          type: array
-          items:
-            $ref: '#/components/schemas/DescribeVaultOutput'
-        Marker:
-          type: string
     JobParameters:
       type: object
       properties:
@@ -275,6 +249,32 @@ components:
           - Expedited
           - Standard
           - Bulk
+    ListVaultsOutput:
+      type: object
+      properties:
+        VaultList:
+          type: array
+          items:
+            $ref: '#/components/schemas/DescribeVaultOutput'
+        Marker:
+          type: string
+    DescribeVaultOutput:
+      type: object
+      properties:
+        VaultARN:
+          type: string
+        VaultName:
+          type: string
+        CreationDate:
+          type: string
+          format: date-time
+        LastInventoryDate:
+          type: string
+          format: date-time
+        NumberOfArchives:
+          type: integer
+        SizeInBytes:
+          type: integer
   securitySchemes:
     sigv4:
       type: apiKey
