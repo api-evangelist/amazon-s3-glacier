@@ -84,7 +84,7 @@ rate_limit_statements:
 - Data transferred out to the internet for the first 100GB per month, aggregated across all AWS Services
   and Regions (except China and GovCloud)
 x-canonical:
-  generated: '2026-11-02'
+  generated: '2026-11-06'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid
