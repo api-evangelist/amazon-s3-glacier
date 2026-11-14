@@ -1,8 +1,9 @@
 name: Amazon S3 Glacier
-description: Amazon S3 Glacier is a secure, durable, and extremely low-cost Amazon S3 storage class purpose-built
-  for long-term data archiving and digital preservation. It provides comprehensive security and compliance
-  capabilities that can help meet even the most stringent regulatory requirements, with retrieval options
-  ranging from minutes to hours depending on your access needs.
+
+description: Amazon S3 Glacier is a secure, durable, and extremely low-cost Amazon S3 storage class purpose-built for long-term data archiving
+  and digital preservation. It provides comprehensive security and compliance capabilities that can help meet even the most stringent regulatory
+  requirements, with retrieval options ranging from minutes to hours depending on your access needs.
+
 deliveryModel:
   model: saas
   open_source: false
@@ -15,7 +16,9 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 specificationVersion: '0.23'
+
 accessModel:
   pricing: paid
   onboarding: unknown
@@ -23,106 +26,89 @@ accessModel:
   try_now: false
   public: false
   label: Paid
-  confidence: medium
+  confidence: high
   source:
   - plans
   - authentication
+  - rate-limits
   - security
-  generated: '2026-11-06'
+  generated: '2026-11-13'
   method: derived
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
+
 url: https://raw.githubusercontent.com/api-evangelist/amazon-s3-glacier/refs/heads/main/apis.yml
+
 created: '2024-01-15'
+
 modified: '2026-09-16'
-apis:
-- aid: amazon-s3-glacier:amazon-s3-glacier-vaults-api
-  name: Amazon S3 Glacier Vaults API
-  description: The Vaults API from Amazon S3 Glacier — 4 operation(s) for vaults.
-  humanURL: https://aws.amazon.com/s3/storage-classes/glacier/
-  baseURL: https://glacier.amazonaws.com
-  tags:
-  - Vault
-  tags_raw:
-  - Vaults
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-s3-glacier-vaults-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/amazonglacier/
-  - type: Pricing
-    url: https://aws.amazon.com/s3/pricing/
-  - type: GettingStarted
-    url: https://aws.amazon.com/s3/getting-started/
-  - type: FAQ
-    url: https://aws.amazon.com/s3/faqs/
-- aid: amazon-s3-glacier:amazon-s3-glacier-access-policy-api
-  name: Amazon S3 Glacier S3 Glacier Access Policy API
-  description: >-
-    The S3 Glacier Access Policy API from Amazon S3 Glacier — 1 operation(s) for s3 glacier access policy.
-  humanURL: https://aws.amazon.com/s3/storage-classes/glacier/
-  baseURL: https://glacier.amazonaws.com
-  tags:
-  - S3 Glacier Access Policy
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-s3-glacier-access-policy-api-openapi.yml
-- aid: amazon-s3-glacier:amazon-s3-glacier-lock-policy-api
-  name: Amazon S3 Glacier S3 Glacier Lock Policy API
-  description: >-
-    The S3 Glacier Lock Policy API from Amazon S3 Glacier — 2 operation(s) for s3 glacier lock policy.
-  humanURL: https://aws.amazon.com/s3/storage-classes/glacier/
-  baseURL: https://glacier.amazonaws.com
-  tags:
-  - S3 Glacier Lock Policy
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-s3-glacier-lock-policy-api-openapi.yml
-- aid: amazon-s3-glacier:amazon-s3-glacier-multipart-uploads-api
-  name: Amazon S3 Glacier S3 Glacier Multipart Uploads API
-  description: >-
-    The S3 Glacier Multipart Uploads API from Amazon S3 Glacier — 2 operation(s) for s3 glacier multipart
-    uploads.
-  humanURL: https://aws.amazon.com/s3/storage-classes/glacier/
-  baseURL: https://glacier.amazonaws.com
-  tags:
-  - S3 Glacier Multipart Uploads
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-s3-glacier-multipart-uploads-api-openapi.yml
-- aid: amazon-s3-glacier:amazon-s3-glacier-notification-configuration-api
-  name: Amazon S3 Glacier S3 Glacier Notification Configuration API
-  description: >-
-    The S3 Glacier Notification Configuration API from Amazon S3 Glacier — 1 operation(s) for s3 glacier
-    notification configuration.
-  humanURL: https://aws.amazon.com/s3/storage-classes/glacier/
-  baseURL: https://glacier.amazonaws.com
-  tags:
-  - S3 Glacier Notification Configuration
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-s3-glacier-notification-configuration-api-openapi.yml
-- aid: amazon-s3-glacier:amazon-s3-glacier-operations-api
-  name: Amazon S3 Glacier S3 Glacier Operations API
-  description: >-
-    The S3 Glacier Operations API from Amazon S3 Glacier — 5 operation(s) for s3 glacier operations.
-  humanURL: https://aws.amazon.com/s3/storage-classes/glacier/
-  baseURL: https://glacier.amazonaws.com
-  tags:
-  - S3 Glacier Operations
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-s3-glacier-operations-api-openapi.yml
-- aid: amazon-s3-glacier:amazon-s3-glacier-tags-api
-  name: Amazon S3 Glacier S3 Glacier Tags API
-  description: The S3 Glacier Tags API from Amazon S3 Glacier — 3 operation(s) for s3 glacier tags.
-  humanURL: https://aws.amazon.com/s3/storage-classes/glacier/
-  baseURL: https://glacier.amazonaws.com
-  tags:
-  - S3 Glacier Tags
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-s3-glacier-tags-api-openapi.yml
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+  url: https://apievangelist.com
+
+tags:
+- Archives
+- Amazon Web Services
+- Backup
+- Storage
+tags_raw:
+- Archives
+- AWS
+- Backup
+- Storage
+
 common:
+- type: Spectral
+  url: rules/amazon-s3-glacier-spectral-rules.yml
+- type: Spectral
+  url: rules/amazon-s3-glacier-rules.yml
+- type: Spectral
+  url: rules/amazon-s3-glacier-jsonschema-spectral-rules.yml
+- type: Vocabulary
+  url: vocabulary/amazon-s3-glacier-vocabulary.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DataModel
+  url: data-model/amazon-s3-glacier-data-model.yml
+- type: CLI
+  url: cli/amazon-s3-glacier-cli.yml
+- type: Conventions
+  url: conventions/amazon-s3-glacier-conventions.yml
+- type: Compliance
+  url: https://aws.amazon.com/compliance/
+- type: Deprecation
+  url: https://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html
+- type: Lifecycle
+  url: lifecycle/amazon-s3-glacier-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/amazon-s3-glacier-error-codes.yml
+- type: ErrorCatalog
+  url: errors/amazon-s3-glacier-problem-types.yml
+- type: Conformance
+  url: conformance/amazon-s3-glacier-conformance.yml
+- type: LLMsTxt
+  url: llms/amazon-s3-glacier-llms.txt
+- type: SecurityTxt
+  url: well-known/amazon-s3-glacier-security.txt
+- type: WellKnown
+  url: well-known/amazon-s3-glacier-well-known.yml
+- type: Hosts
+  url: hosts/amazon-s3-glacier-hosts.yml
+- type: Vendors
+  url: vendors/amazon-s3-glacier-vendors.yml
+- type: SDKs
+  url: packages/amazon-s3-glacier-packages.yml
+- type: Packages
+  url: packages/amazon-s3-glacier-packages.yml
+- type: Security
+  url: https://aws.amazon.com/security/?nc2=h_dsc_aa_sec
+- type: Sandbox
+  url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin
+- type: Newsroom
+  url: https://aws.amazon.com/media/?nc2=h_sol_ind_med
+- type: GettingStarted
+  url: https://developer.amazon.com/frustration-free-setup
 - type: Plans
   url: plans/amazon-s3-glacier-plans-pricing.yml
 - type: RateLimits
@@ -209,9 +195,172 @@ common:
 - type: Vocabulary
   url: vocabulary/amazon-s3-glacier-vocabulary.yaml
 - type: OpenAPI
-  url: openapi/_original/amazon-s3-glacier-api-openapi.yml
+  url: openapi/_superseded/amazon-s3-glacier-api-openapi.yml
 - type: Integrations
   url: https://aws.amazon.com/partners/
+- type: UsageTerms
+  url: terms/amazon-s3-glacier-terms-of-service.yml
+- type: DataProcessing
+  url: privacy/amazon-s3-glacier-privacy-policy.yml
+- type: Attestations
+  url: compliance/amazon-s3-glacier-compliance.yml
+- type: AIPreferences
+  url: ai-preferences/amazon-s3-glacier-ai-preferences.yml
+
+apis:
+- aid: amazon-s3-glacier:amazon-s3-glacier-vaults-api
+  name: Amazon S3 Glacier Vaults API
+  description: The Vaults API from Amazon S3 Glacier — 4 operation(s) for vaults.
+  humanURL: https://aws.amazon.com/s3/storage-classes/glacier/
+  baseURL: https://glacier.amazonaws.com
+  tags:
+  - Vault
+  tags_raw:
+  - Vaults
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-s3-glacier-vaults-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonglacier/
+  - type: Pricing
+    url: https://aws.amazon.com/s3/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/s3/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/s3/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-list-jobs-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-describe-vault-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-list-vaults-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-upload-archive-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-create-vault-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-initiate-job-input-schema.json
+- aid: amazon-s3-glacier:amazon-s3-glacier-access-policy-api
+  name: Amazon S3 Glacier S3 Glacier Access Policy API
+  description: The S3 Glacier Access Policy API from Amazon S3 Glacier — 1 operation(s) for s3 glacier access policy.
+  humanURL: https://aws.amazon.com/s3/storage-classes/glacier/
+  baseURL: https://glacier.amazonaws.com
+  tags:
+  - S3 Glacier Access Policy
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-s3-glacier-access-policy-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-set-vault-access-policy-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-delete-vault-access-policy-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-get-vault-access-policy-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-get-vault-access-policy-output-schema.json
+- aid: amazon-s3-glacier:amazon-s3-glacier-lock-policy-api
+  name: Amazon S3 Glacier S3 Glacier Lock Policy API
+  description: The S3 Glacier Lock Policy API from Amazon S3 Glacier — 2 operation(s) for s3 glacier lock policy.
+  humanURL: https://aws.amazon.com/s3/storage-classes/glacier/
+  baseURL: https://glacier.amazonaws.com
+  tags:
+  - S3 Glacier Lock Policy
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-s3-glacier-lock-policy-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-complete-vault-lock-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-initiate-vault-lock-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-abort-vault-lock-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-get-vault-lock-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-get-vault-lock-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-initiate-vault-lock-output-schema.json
+- aid: amazon-s3-glacier:amazon-s3-glacier-multipart-uploads-api
+  name: Amazon S3 Glacier S3 Glacier Multipart Uploads API
+  description: The S3 Glacier Multipart Uploads API from Amazon S3 Glacier — 2 operation(s) for s3 glacier multipart uploads.
+  humanURL: https://aws.amazon.com/s3/storage-classes/glacier/
+  baseURL: https://glacier.amazonaws.com
+  tags:
+  - S3 Glacier Multipart Uploads
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-s3-glacier-multipart-uploads-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-list-parts-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-list-parts-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-complete-multipart-upload-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-upload-multipart-part-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-list-multipart-uploads-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-initiate-multipart-upload-input-schema.json
+- aid: amazon-s3-glacier:amazon-s3-glacier-notification-configuration-api
+  name: Amazon S3 Glacier S3 Glacier Notification Configuration API
+  description: The S3 Glacier Notification Configuration API from Amazon S3 Glacier — 1 operation(s) for s3 glacier notification configuration.
+  humanURL: https://aws.amazon.com/s3/storage-classes/glacier/
+  baseURL: https://glacier.amazonaws.com
+  tags:
+  - S3 Glacier Notification Configuration
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-s3-glacier-notification-configuration-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-set-vault-notifications-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-delete-vault-notifications-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-get-vault-notifications-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-get-vault-notifications-output-schema.json
+- aid: amazon-s3-glacier:amazon-s3-glacier-operations-api
+  name: Amazon S3 Glacier S3 Glacier Operations API
+  description: The S3 Glacier Operations API from Amazon S3 Glacier — 5 operation(s) for s3 glacier operations.
+  humanURL: https://aws.amazon.com/s3/storage-classes/glacier/
+  baseURL: https://glacier.amazonaws.com
+  tags:
+  - S3 Glacier Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-s3-glacier-operations-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-glacier-job-description-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-get-job-output-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-get-job-output-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-delete-archive-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-describe-job-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-set-data-retrieval-policy-input-schema.json
+- aid: amazon-s3-glacier:amazon-s3-glacier-tags-api
+  name: Amazon S3 Glacier S3 Glacier Tags API
+  description: The S3 Glacier Tags API from Amazon S3 Glacier — 3 operation(s) for s3 glacier tags.
+  humanURL: https://aws.amazon.com/s3/storage-classes/glacier/
+  baseURL: https://glacier.amazonaws.com
+  tags:
+  - S3 Glacier Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-s3-glacier-tags-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-add-tags-to-vault-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-remove-tags-from-vault-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-list-tags-for-vault-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-s3-glacier-list-tags-for-vault-output-schema.json
+
 integrations:
 - name: Partner Programs
 - name: Resources
@@ -221,19 +370,18 @@ integrations:
 - name: AWS Partner Central
 - name: Partner Paths
 - name: co-sell with AWS
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
-  url: https://apievangelist.com
-tags:
-- Archives
-- Amazon Web Services
-- Backup
-- Storage
+
 tags_raw:
 - Archive
 - AWS
 - Backup
 - Storage
+
 x-parent: amazon-web-services
+
 x-relationship: product
+x-enrichment:
+  date: '2026-11-11'
+  status: enriched
+  artifacts_added: 10
+  pass: local-v6

@@ -5,12 +5,24 @@ artifacts:
   agentic-access/amazon-s3-glacier-agentic-access.yml:
     method: generated
     evidence: declared in the artifact
+  ai-preferences/amazon-s3-glacier-ai-preferences.yml:
+    method: harvested
+    evidence: declared in the artifact
   authentication/amazon-s3-glacier-authentication.yml:
     method: derived
     evidence: declared in the artifact
   capabilities/amazon-s3-glacier-capability-edges.yml:
     method: unknown
     evidence: no authorship recorded
+  certification/observations-2026-11-11.jsonl:
+    method: unknown
+    evidence: no authorship recorded
+  certification/status.yml:
+    method: unknown
+    evidence: no authorship recorded
+  cli/amazon-s3-glacier-cli.yml:
+    method: searched
+    evidence: declared in the artifact
   collections/amazon-s3-glacier-api.opencollection.json:
     method: unknown
     evidence: no authorship recorded
@@ -23,6 +35,24 @@ artifacts:
   collections/amazon-s3-glacier-vaults-api.postman_collection.json:
     method: derived
     evidence: openapi/amazon-s3-glacier-vaults-api
+  compliance/amazon-s3-glacier-compliance.yml:
+    method: harvested
+    evidence: declared in the artifact
+  conformance/amazon-s3-glacier-conformance.yml:
+    method: derived
+    evidence: declared in the artifact
+  conventions/amazon-s3-glacier-conventions.yml:
+    method: searched
+    evidence: declared in the artifact
+  data-model/amazon-s3-glacier-data-model.yml:
+    method: derived
+    evidence: declared in the artifact
+  errors/amazon-s3-glacier-error-codes.yml:
+    method: searched
+    evidence: declared in the artifact
+  errors/amazon-s3-glacier-problem-types.yml:
+    method: derived
+    evidence: declared in the artifact
   examples/amazon-s3-glacier-api-describe-vault-output-example.json:
     method: unknown
     evidence: no authorship recorded
@@ -41,6 +71,9 @@ artifacts:
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
+  hosts/amazon-s3-glacier-hosts.yml:
+    method: derived
+    evidence: declared in the artifact
   integrations/_index.yml:
     method: generated
     evidence: carries an API Evangelist house phrase
@@ -62,6 +95,12 @@ artifacts:
   json-ld/amazon-s3-glacier-vault-context.jsonld:
     method: unknown
     evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-abort-vault-lock-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-add-tags-to-vault-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
   json-schema/amazon-s3-glacier-api-describe-vault-output-schema.json:
     method: unknown
     evidence: no authorship recorded
@@ -69,6 +108,108 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-s3-glacier-api-list-vaults-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-complete-multipart-upload-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-complete-vault-lock-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-create-vault-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-delete-archive-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-delete-vault-access-policy-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-delete-vault-notifications-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-describe-job-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-describe-vault-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-get-job-output-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-get-job-output-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-get-vault-access-policy-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-get-vault-access-policy-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-get-vault-lock-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-get-vault-lock-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-get-vault-notifications-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-get-vault-notifications-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-glacier-job-description-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-initiate-job-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-initiate-multipart-upload-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-initiate-vault-lock-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-initiate-vault-lock-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-list-jobs-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-list-multipart-uploads-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-list-parts-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-list-parts-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-list-tags-for-vault-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-list-tags-for-vault-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-list-vaults-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-remove-tags-from-vault-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-set-data-retrieval-policy-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-set-vault-access-policy-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-set-vault-notifications-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-upload-archive-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-s3-glacier-upload-multipart-part-input-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-s3-glacier-vault-schema.json:
@@ -89,7 +230,7 @@ artifacts:
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-02T082323.yml:
+  kin/checks-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -158,10 +299,21 @@ artifacts:
   kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  openapi/_original/amazon-s3-glacier-api-openapi.yml:
-    method: harvested
-    evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
-      to the provider's source is unverified
+  kin/score-2026-11-06T143934.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  lifecycle/amazon-s3-glacier-lifecycle.yml:
+    method: searched
+    evidence: declared in the artifact
+  llms/amazon-s3-glacier-llms-provenance.yml:
+    method: unknown
+    evidence: no authorship recorded
+  llms/amazon-s3-glacier-llms.txt:
+    method: unknown
+    evidence: no authorship recorded
+  mcp/amazon-s3-glacier-mcp.yml:
+    method: derived
+    evidence: declared in the artifact
   openapi/amazon-s3-glacier-access-policy-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
@@ -181,18 +333,33 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   openapi/amazon-s3-glacier-vaults-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
+  packages/amazon-s3-glacier-packages.yml:
+    method: searched
+    evidence: declared in the artifact
+  patterns/amazon-s3-glacier-patterns.yml:
     method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    evidence: declared in the artifact
   plans/amazon-s3-glacier-plans-pricing.yml:
     method: searched
     evidence: declared in the artifact
   postman/amazon-s3-glacier-vaults-api.postman_collection.json:
     method: derived
     evidence: openapi/amazon-s3-glacier-vaults-api
+  privacy/amazon-s3-glacier-privacy-policy.yml:
+    method: harvested
+    evidence: declared in the artifact
   rate-limits/amazon-s3-glacier-rate-limits.yml:
+    method: searched
+    evidence: declared in the artifact
+  regulatory/amazon-s3-glacier-regulatory-posture.yml:
+    method: unknown
+    evidence: no authorship recorded
+  rules/amazon-s3-glacier-jsonschema-spectral-rules.yml:
     method: generated
     evidence: declared in the artifact
-  rules/amazon-s3-glacier-jsonschema-spectral-rules.yml:
+  rules/amazon-s3-glacier-rules.yml:
     method: generated
     evidence: declared in the artifact
   rules/amazon-s3-glacier-spectral-rules.yml:
@@ -207,12 +374,40 @@ artifacts:
   security/amazon-s3-glacier-vulnerability-disclosure.yml:
     method: searched
     evidence: declared in the artifact
+  skills/_index.yml:
+    method: generated
+    evidence: declared in the artifact
+  skills/amazon-s3-glacier-retrieve-archive.md:
+    method: unknown
+    evidence: no authorship recorded
+  skills/amazon-s3-glacier-upload-large-archive.md:
+    method: unknown
+    evidence: no authorship recorded
   sla/amazon-s3-glacier-sla.yml:
     method: generated
     evidence: declared in the artifact
   smithy/glacier-2012-06-01.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/glacier/service/2012-06-01/glacier-2012-06-01.json
+      (sha256 7dfb18c29d86, fetched 2026-11-11T21:14:57+00:00)
+  terms/amazon-s3-glacier-terms-of-service.yml:
+    method: harvested
+    evidence: declared in the artifact
+  vendors/amazon-s3-glacier-vendors.yml:
     method: unknown
     evidence: no authorship recorded
   vocabulary/amazon-s3-glacier-vocabulary.yaml:
+    method: unknown
+    evidence: no authorship recorded
+  vocabulary/amazon-s3-glacier-vocabulary.yml:
+    method: derived
+    evidence: declared in the artifact
+  well-known/amazon-s3-glacier-midway-auth-openid-configuration.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-s3-glacier-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-s3-glacier-well-known.yml:
     method: unknown
     evidence: no authorship recorded
